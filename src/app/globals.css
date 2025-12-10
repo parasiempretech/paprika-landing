@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-paprika-creamSoft text-paprika-brown font-sans antialiased;
+}
+
+.section {
+  @apply py-16 md:py-24;
+}
+
+.section-inner {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold tracking-tight text-paprika-brown;
+}
+
+.section-subtitle {
+  @apply mt-3 text-base md:text-lg text-paprika-brown/80;
+}
+
+.card-3d {
+  @apply bg-paprika-cream shadow-soft-3d rounded-3xl border border-white/40;
+  backdrop-filter: blur(10px);
+}

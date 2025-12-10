@@ -1,0 +1,25 @@
+# Dependencias
+node_modules/
+
+# Build de Next
+.next/
+out/
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Configs locales
+.vercel/
+.DS_Store
+Thumbs.db
+
+# Historias de VS Code u otras herramientas
+.history/
