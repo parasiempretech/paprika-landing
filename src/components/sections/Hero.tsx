@@ -36,10 +36,10 @@ export function Hero() {
       <div className="absolute top-0 left-0 h-96 w-96 rounded-full bg-paprika-caramel/10 blur-3xl opacity-50" />
       <div className="absolute bottom-0 right-0 h-[30rem] w-[30rem] rounded-full bg-paprika-accent/10 blur-3xl opacity-40" />
 
-      <div className="section-inner relative grid md:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
-        {/* TEXTO PRINCIPAL - Contenedor con secuencia de animación */}
+      <div className="section-inner relative grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+        {/* TEXTO PRINCIPAL - Contenedor con secuencia de animación (Siempre visible, aparece primero) */}
         <motion.div
-          className="space-y-8"
+          className="space-y-8 order-1" // order-1: Aparece primero en móvil y desktop
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -113,9 +113,9 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* BLOQUE VISUAL DESTACADO (Animación de Imagen y Hover) */}
+        {/* BLOQUE VISUAL DESTACADO - Ahora es visible en todas las pantallas */}
         <motion.div
-          className="relative hidden md:block"
+          className="relative order-2 w-full max-w-sm mx-auto md:max-w-none md:mx-0" // order-2: Aparece después en móvil. Añadimos un max-width para centrarlo en pantallas pequeñas.
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -128,6 +128,7 @@ export function Hero() {
           >
             <div className="relative rounded-2xl overflow-hidden border border-white/40 aspect-[4/5] shadow-2xl">
               {/* Animación de la imagen de fondo (pequeño zoom al inicio) */}
+              {/* **IMPORTANTE:** Aquí se usa bg-[url('/images/hero-brick.jpg')] */}
               <motion.div
                 className="absolute inset-0 bg-[url('/images/hero-brick.jpg')] bg-cover bg-center"
                 initial={{ scale: 1.1, y: 10 }}
